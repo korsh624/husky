@@ -1,0 +1,28 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#update_telemetry').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/update_telemetry',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+
+</script>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8  offset-lg-2">
+                <h3 class="mt-5">Live Streaming</h3>
+                <div style="width: 600; height: 600;">
+                    <img src="{{ url_for('video_feed') }}" width="100%">
+                </div>
+                <a href=# id=update_telemetry><button>update_telemetry</button></a>
+
+            </div>
+        </div>
+    </div>
+    </body>
